@@ -74,7 +74,22 @@
 </div>
 <script src="https://unpkg.com/jquery"></script>
 <script>
-  // Add your code here!
+  //give all imgs inside <article> tag, the class image-center
+  $("article > img").addClass("image-center");
+  $("article p:last-child").remove();
+
+  //generate Random Number
+  const randomNum = function() {
+    return Math.floor(Math.random() * (101));
+  }
+
+  //select the title element
+  $("h1").css({"font-size":`${randomNum()}px`});
+  //assign the val of title to be a random num from 0 to 100 in PIXELS -- string
+
+  $("<li>")
+
+
 </script>
 </body>
 
