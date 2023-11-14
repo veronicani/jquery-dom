@@ -115,11 +115,35 @@
 
   // }
 
-  function colorsMain(evt) {
-    // Updates the value of the input
-    console.log(evt);
-    console.log(evt.target.val());
-
+  function changeColors(evt) {
+    //assign the evt.target
+    // const $input = $(evt.target);
+    
+    const $inputs = $("input");
+    console.log('$inputs: ', $inputs);
+    console.log('$inputs.val: ', $inputs.val());
+    console.log('$inputs length: ', $inputs.length);
+    
+    // console.log('get: ', $inputs.get(0));
+    // const $red = $inputs.get(0);
+    // console.log('red val: ', $red.val());
+    
+    // const $red = $inputs[0].val();
+    // console.log('red val: ', $red); 
+    
+    for (const input of $inputs) {
+      console.log(input);
+      console.log('input val: ', input.value);
+      const $input = $(input); 
+      console.log('$input val: ', $input.val());
+      //[255, 254, 250]
+    }
+    //[red, blue, green] = [255, 254, 250]
+    //body html turns into jquery obj????? css.color += red
+  
+    //[red, blue, green] = []
+    
+    
     // Grab the colors
     //grabColors(evt); // pass in what?
 
@@ -128,7 +152,10 @@
   }
 
   // add event listener to parent of the inputs
-  $("div.row mb-5").on("click", ".form-control", colorsMain);
+  const $formParent = $("form").parent();
+
+  // $formParent.on("input", console.log('hello!'));
+  $("div.row.mb-5").on("change", ".form-control", changeColors);
 
   // grab jQuery object
   // let $colorInputs = $("input.form-control").val();
