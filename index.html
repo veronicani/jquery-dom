@@ -87,7 +87,53 @@
   $("h1").css({"font-size":`${randomNum()}px`});
   //assign the val of title to be a random num from 0 to 100 in PIXELS -- string
 
-  $("<li>")
+  // Add a new list item to the end
+  $("ol").append($("<li>"));
+  $("ol > li:last-child").text("I wish this was my dog... mine needs a friend");
+
+  $("ol").empty();
+  let $paragraph = $("<p>").text("Sorry about that list!");
+  $("ol").append($paragraph);
+
+
+
+  /** Takes event object, retrieves value attribute from each input. Returns
+   *  nothing, calls changeColors().
+  */
+  // function grabColors(evt) {
+  //   // grab color values
+  //   const $redVal = $(evt > "div:1st-child > input").val(); // grab red value
+  //   const $blueVal = ; // grab blue value
+  //   const $greenVal = ; // grab green value
+
+  //   changeColors(evt);
+  // }
+
+  // /** Takes event object, alters CSS for color of body, returns nothing.*/
+  // function changeColors(evt) {
+  //   // change colors here
+
+  // }
+
+  function colorsMain(evt) {
+    // Updates the value of the input
+    console.log(evt);
+    console.log(evt.target.val());
+
+    // Grab the colors
+    //grabColors(evt); // pass in what?
+
+    // Change the colors
+    //changeColors(evt); // pass in colors? is that needed?
+  }
+
+  // add event listener to parent of the inputs
+  $("div.row mb-5").on("click", ".form-control", colorsMain);
+
+  // grab jQuery object
+  // let $colorInputs = $("input.form-control").val();
+  // console.log($colorInputs);
+
 
 
 </script>
